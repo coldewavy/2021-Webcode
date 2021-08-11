@@ -1,0 +1,33 @@
+  
+
+        #grid{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        #article{
+            font-size: 16px;
+            font-family: cursive;
+        }
+
+        #list1{
+            list-style: none;
+            text-align: center;
+            padding: 15px;
+            margin: 0px;
+            background-color: #5a4754;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        #sub-title{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bolder;
+        padding: 30px;
+        background-color: #bfdedc;
+        font-family: "고딕";
+        margin: 0px;
+        }
+
