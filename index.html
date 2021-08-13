@@ -9,14 +9,24 @@
 
     <body style="margin:0px">
         
-        <input type="button" value="Day" onclick="
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black'
-        ">
-        <input type="button" value="Night" onclick="
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white'
-        ">
+        <input class="modebutton" type="button" value="야간모드" onclick="
+        var mode = document.querySelector('body').style;
+        var title = document.querySelector('#sub-title').style;
+        if(this.value === '야간모드')
+        {
+        mode.backgroundColor='black';
+        mode.color='white';
+        title.backgroundColor = 'gray';
+        title.color = 'white'
+        this.value ='주간모드';
+        }
+        else {
+            mode.backgroundColor='white';
+            mode.color='black';
+            title.backgroundColor = '#eeeae7';
+            title.color = 'black'
+            this.value ='야간모드';
+        } ">
         
         <p id="sub-title">
         <a href="index.html" style="color:black; text-decoration:none;">
@@ -53,8 +63,58 @@
         <img src="beach.jpg" width="720px" id="img">
         
 
-
+        Text to test button position
         
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
+        <ul id="list">
+            <li>Support
+            <li>Credit
+        </ul>
+
         <ul id="list">
             <li>Support
             <li>Credit
