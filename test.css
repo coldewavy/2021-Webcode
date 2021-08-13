@@ -27,12 +27,12 @@
         font-weight: bolder;
         padding: 30px;
         background-color: #eeeae7;
-        font-family: "고딕";
+        font-family: "auto";
         margin: 0px;
         }
 
         #uplist{
-                font-family:cursive;
+                font-family:auto;
                 text-decoration:none;
                 color: #eeeae7;
         }
