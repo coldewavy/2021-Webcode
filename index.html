@@ -13,39 +13,51 @@
         PORTFOLIO
         </a>
 
+        <button id='modebutton' onclick="themetoggle()">
+        야간모드 
+        </button>
+        
         <script>
         var mode = document.querySelector('body').style;
-        var title = document.querySelector('#sub-title').style; 
+        var title = document.querySelector('#sub-title').style;
+        var change = document.getElementById('modebutton');
             function themedark() {
                 mode.backgroundColor='black';
                 mode.color='white';
+                mode.transition = '.5s background, .4s color';
                 title.backgroundColor = 'gray';
-                title.color = 'white'
+                title.color = 'white';
+                title.transition = '.5s background, .4s color';
                 localStorage.setItem('theme', 'themedark');
             }
             function themelight() {
                 mode.backgroundColor='white';
                 mode.color='black';
+                mode.transition = '.5s background, .4s color';
                 title.backgroundColor = 'white';
-                title.color = 'black'
+                title.color = 'black';
+                title.transition = '.5s background, .4s color';
                 localStorage.setItem('theme', 'themelight');
             }
             function themetoggle(){
                 if(localStorage.getItem('theme')==='themedark'){
                     themelight();
+                    change.innerHTML = '야간모드';
                 }else{
                     themedark();
+                    change.innerHTML = '주간모드';
                 }
             }
             
             if(localStorage.getItem('theme')==='themedark'){
                     themedark();
+                    change.innerHTML = '주간모드';
                 }else{
                     themelight;
+                    change.innerHTML = '야간모드';
                 }
             
         </script>
-        <button class='modebutton' onclick="themetoggle()"> <span>야간모드</span> </button>
         
         <ul id="list1">
         <div id="grid">
