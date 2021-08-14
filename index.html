@@ -1,56 +1,55 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Vision 2021</title>
         <meta charset="UTF-8">
-        <meta name="viewport" conetent="width-device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
         <link href="test.css" rel="stylesheet" type="text/css">
     </head>
 
 
     <body style="margin:0px">
-        
-        <style>
-            @media all and (max-width: 600px)
-            {
-                #img {
-                    width: 460px;
-                }
-                .article{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                }
-            }
-        </style> 
-   
-        <input class="modebutton" type="button" value="야간모드" onclick="
-        var mode = document.querySelector('body').style;
-        var title = document.querySelector('#sub-title').style;
-        if(this.value === '야간모드')
-        {
-        mode.backgroundColor='black';
-        mode.color='white';
-        title.backgroundColor = 'gray';
-        title.color = 'white'
-        this.value ='주간모드';
-        }
-        else {
-            mode.backgroundColor='white';
-            mode.color='black';
-            title.backgroundColor = '#eeeae7';
-            title.color = 'black'
-            this.value ='야간모드';
-        } ">
-        
         <p id="sub-title">
         <a href="index.html" style="color:black; text-decoration:none;">
         PORTFOLIO
         </a>
         </p>
 
+        <script>
+        var mode = document.querySelector('body').style;
+        var title = document.querySelector('#sub-title').style; 
+            function themedark() {
+                mode.backgroundColor='black';
+                mode.color='white';
+                title.backgroundColor = 'gray';
+                title.color = 'white'
+                localStorage.setItem('theme', 'themedark');
+            }
+            function themelight() {
+                mode.backgroundColor='white';
+                mode.color='black';
+                title.backgroundColor = 'white';
+                title.color = 'black'
+                localStorage.setItem('theme', 'themelight');
+            }
+            function themetoggle(){
+                if(localStorage.getItem('theme')==='themedark'){
+                    themelight();
+                }else{
+                    themedark();
+                }
+            }
+            
+            if(localStorage.getItem('theme')==='themedark'){
+                    themedark();
+                }else{
+                    themelight;
+                }
+            
+        </script>
+        <button class='modebutton' onclick="themetoggle()"> <span>야간모드</span> </button>
         
         <ul id="list1">
-         <div id="grid">
+        <div id="grid">
             <div>
             <li>
             <a href="uplist1.html" title="What is HTML?" id="uplist">
@@ -72,17 +71,19 @@
         </div>
         </ul>
 
-        <img src="title.jpeg" id="img">
-        
 
-        Text to test button position
+
+        <img src="title.jpeg" id="img">
         
         <p class="article">
         안녕하세요! 여기는 HTML, CSS, JS 을 통해 만들어진 홈페이지입니다.</br>
         홈페이지를 만드는 이유는 오랫동안 해보고 싶었던 코딩을 하고 기록하기 위한 홈페이지입니다.</br>
         여러가지 기능을 배우고 채우고 있습니다!
         </p>
-            
+        
+
+
+        
         <ul id="list">
             <li>Support
             <li>Credit
@@ -96,3 +97,4 @@
 
 
 </html>
+

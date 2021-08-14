@@ -14,6 +14,39 @@
         </a>
         </p>
 
+        <script>
+        var mode = document.querySelector('body').style;
+        var title = document.querySelector('#sub-title').style; 
+            function themedark() {
+                mode.backgroundColor='black';
+                mode.color='white';
+                title.backgroundColor = 'gray';
+                title.color = 'white'
+                localStorage.setItem('theme', 'themedark');
+            }
+            function themelight() {
+                mode.backgroundColor='white';
+                mode.color='black';
+                title.backgroundColor = 'white';
+                title.color = 'black'
+                localStorage.setItem('theme', 'themelight');
+            }
+            function themetoggle(){
+                if(localStorage.getItem('theme')==='themedark'){
+                    themelight();
+                }else{
+                    themedark();
+                }
+            }
+            
+            if(localStorage.getItem('theme')==='themedark'){
+                    themedark();
+                }else{
+                    themelight;
+                }
+            
+        </script>
+        <button class='modebutton' onclick="themetoggle()"> <span>야간모드</span> </button>
         
         <ul id="list1">
         <div id="grid">
@@ -26,7 +59,7 @@
             <div>
             <li>
             <a href="uplist2.html" title="HTML Tag?" id="uplist">
-            HTML Tag</a>
+            <span style = "color:yellow;">HTML Tag</span></a>
             </li>
             </div>
             <div>
@@ -40,7 +73,7 @@
 
 
 
-        <img src="beach.jpg" width="100%">
+        <img src="beach.jpg" id="img">
         
 
 
