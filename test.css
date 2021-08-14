@@ -26,6 +26,7 @@
         }
 
         #sub-title{
+        display: block;
         text-align: center;
         font-size: 35px;
         font-weight: bolder;
