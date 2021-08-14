@@ -7,52 +7,22 @@
     </head>
 
 
-    <body style="margin:0px">
-
+    <body style="margin:0px; background-Color: #EBE8E4;">
+        
         <a href="index.html" id="sub-title">
         PORTFOLIO
         </a>
-
-        <script>
-        var mode = document.querySelector('body').style;
-        var title = document.querySelector('#sub-title').style; 
-            function themedark() {
-                mode.backgroundColor='black';
-                mode.color='white';
-                title.backgroundColor = 'gray';
-                title.color = 'white'
-                localStorage.setItem('theme', 'themedark');
-            }
-            function themelight() {
-                mode.backgroundColor='white';
-                mode.color='black';
-                title.backgroundColor = 'white';
-                title.color = 'black'
-                localStorage.setItem('theme', 'themelight');
-            }
-            function themetoggle(){
-                if(localStorage.getItem('theme')==='themedark'){
-                    themelight();
-                }else{
-                    themedark();
-                }
-            }
-            
-            if(localStorage.getItem('theme')==='themedark'){
-                    themedark();
-                }else{
-                    themelight;
-                }
-            
-        </script>
-        <button class='modebutton' onclick="themetoggle()"> <span>야간모드</span> </button>
+        
+        <button id='modebutton' onclick="themetoggle()">
+        🌖 
+        </button>
 
         <ul id="list1">
         <div id="grid">
             <div>
             <li>
             <a href="uplist1.html" title="What is HTML?" id="uplist">
-            <span style = "color:yellow;">What is HTML?</span></a>
+            What is HTML?</a>
             </li>
             </div>
             <div>
@@ -70,9 +40,67 @@
         </div>
         </ul>
 
+        <script>
+        var mode = document.querySelector('body').style;
+        var title = document.querySelector('#sub-title').style;
+        var list = document.querySelector('#list1').style;
+        var change = document.getElementById('modebutton');
+            function themedark() {
+                mode.backgroundColor='#BEBABF';
+                mode.color='black';
+                mode.transition = '.5s background, .4s color';
+                title.backgroundColor = '#171C26';
+                title.color = 'white';
+                title.transition = '.5s background, .4s color';
+                list.backgroundColor = '#747C8C';
+                list.color='white';
+                list.transition = '.5s background, .4s color';
+                localStorage.setItem('theme', 'themedark');
+            }
+            function themelight() {
+                mode.backgroundColor='#EBE8E4';
+                mode.color='black';
+                mode.transition = '.5s background, .4s color';
+                title.backgroundColor = '#BACAC0';
+                title.color = 'black';
+                title.transition = '.5s background, .4s color';
+                list.backgroundColor = '#193b59';
+                list.color='white';
+                list.transition = '.5s background, .4s color';
+                localStorage.setItem('theme', 'themelight');
+            }
+            function themetoggle(){
+                if(localStorage.getItem('theme')==='themedark'){
+                    themelight();
+                    change.innerHTML = '🌖';
+                }else{
+                    themedark();
+                    change.innerHTML = '☀️';
+                }
+            }
+            
+            if(localStorage.getItem('theme')==='themedark'){
+                    themedark();
+                    change.innerHTML = '☀️';
+                }else{
+                    themelight;
+                    change.innerHTML = '🌖';
+                }
+            
+        </script>
+        
+        
+        
 
 
-        <img src="beach.jpg" id="img">>
+
+        <img src="title.jpeg" id="img">
+        
+        <p class="article">
+        안녕하세요! 여기는 HTML, CSS, JS 을 통해 만들어진 홈페이지입니다.</br>
+        홈페이지를 만드는 이유는 오랫동안 해보고 싶었던 코딩을 하고 기록하기 위한 홈페이지입니다.</br>
+        여러가지 기능을 배우고 채우고 있습니다!
+        </p>
         
 
 
