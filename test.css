@@ -87,5 +87,12 @@
 
         #modebutton:hover
         {background-color: #136315;}
-
+        
+        .donebtn{
+                background-color: black;
+                margin: 10px;
+                width: 35px;
+                height: 35px;
+                font-size:5px;
+        }
         
