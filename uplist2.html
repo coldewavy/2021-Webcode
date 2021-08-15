@@ -35,7 +35,7 @@
             <div>
             <li>
             <a href="uplist3.html" title="My Vision 2022" id="uplist">
-            My Vision 2022</a>
+            To Do List</a>
             </li>
             </div>
         </div>
@@ -90,26 +90,55 @@
             
         </script>
         
+
+        <p style="">-당직 남은시간-</p>
+        <div id="count" style=""></div>
         
+        <script>
+        var raw = new Date()
+            raw.setDate(raw.getDate() + 1);
+            raw.setMinutes(30);
+            raw.setHours(8);
+        var end = raw.getTime();
+        setInterval(function(){
+            var start = new Date().getTime();
+            var gap = end - start;
+            var hour = Math.ceil((gap%(1000*60*60*24))/(1000*60*60));
+            var min = Math.ceil((gap%(1000*60*60))/(1000*60));
+            var sec = Math.ceil((gap%(1000*60))/1000);
+            document.getElementById('count').innerHTML = "당직종료까지 " + hour + " 시간 " + min + " 분 " + sec + " 초 남았습니다.";
+        },1000)
+        </script>
+
+
+        <p>전역 Progress Bar</p>
+        <progress value="now" max="hell"></progress>
+
+        <input id="input_escape" type="date">
+        <input id="escapesubmit" type="submit" onclick="check()" value="확인">
+        <div id="escape"></div>
+        
+        <script>
+
+        function check(){
+        var escape = document.querySelector("#input_escape").value;
+        var escaperaw = escape.getTime();
+        var nowraw = new Date().getTime();
+        setInterval(function(){
+            var gap = escaperaw - nowraw;
+            var hour = Math.ceil((gap%(1000*60*60*24))/(1000*60*60));
+            var min = Math.ceil((gap%(1000*60*60))/(1000*60));
+            var sec = Math.ceil((gap%(1000*60))/1000);
+        
+
+        }
+        
+
+        
+        </script>
         
 
 
-
-        <img src="title.jpeg" id="img">
-        
-        <p class="article">
-        안녕하세요! 여기는 HTML, CSS, JS 을 통해 만들어진 홈페이지입니다.</br>
-        홈페이지를 만드는 이유는 오랫동안 해보고 싶었던 코딩을 하고 기록하기 위한 홈페이지입니다.</br>
-        여러가지 기능을 배우고 채우고 있습니다!
-        </p>
-        
-
-
-        
-        <ul id="list">
-            <li>Support
-            <li>Credit
-        </ul>
        
 
     </body>
