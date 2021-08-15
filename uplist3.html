@@ -35,7 +35,7 @@
             <div>
             <li>
             <a href="uplist3.html" title="My Vision 2022" id="uplist">
-            My Vision 2022</a>
+            To Do List</a>
             </li>
             </div>
         </div>
@@ -133,22 +133,26 @@
         function painttodo(text){
            const li = document.createElement("li"); //HTML을 우리가 원하는걸 만든다.
            const deletebtn = document.createElement("button");
-                 deletebtn.innerText = "삭제";
+                 deletebtn.innerText = "X";
+                 deletebtn.className = 'deletebtn';
            
            const Donebtn = document.createElement("button");
-                 Donebtn.innerText = "완료";
+                 Donebtn.innerText = "~";
                  Donebtn.className = 'donebtn';
-                 Donebtn.style.backgroundColor = "black"
+                 Donebtn.style.backgroundColor = "orange"
                  Donebtn.onclick = function(){
-                         if(Donebtn.style.backgroundColor === "black"){
+                         if(Donebtn.style.backgroundColor === "orange"){
                                  Donebtn.style.backgroundColor = "green";
+                                 Donebtn.innerText = "O";
                          }else{
-                                 Donebtn.style.backgroundColor = "black";
+                                 Donebtn.style.backgroundColor = "orange";
+                                 Donebtn.innerText = "~";
                          }
-                 }           
+                 }                
 
 
             const span = document.createElement("span");
+                  span.className = 'btn_span';
             const newID = todos.length+1; // li에 아이디를 주기위함
            deletebtn.addEventListener('click',deletetodo);//클릭했을때 지움
            span.innerText = text;
