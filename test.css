@@ -100,11 +100,9 @@
                 
         }
         .donebtn:hover{
-                background-color: green;
                 margin: 10px;
                 width: 35px;
                 height: 35px;
-                font-size:5px;
         }
         
         .js-todoform{
