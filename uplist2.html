@@ -109,32 +109,43 @@
             document.getElementById('count').innerHTML = "당직종료까지 " + hour + " 시간 " + min + " 분 " + sec + " 초 남았습니다.";
         },1000)
         </script>
+       
+        <ul>
+        <li id=pgc>
+        <span id="pgb"></div>
+        </li>
+        </ul>
+        <div id='datecount'></div>
 
+        <input id = inputdate type = date>
+        <input id = inputbutton type = button value="확인" onclick = "daydate()">
 
-        <p>전역 Progress Bar</p>
-        <progress value="now" max="hell"></progress>
-
-        <input id="input_escape" type="date">
-        <input id="escapesubmit" type="submit" onclick="check()" value="확인">
-        <div id="escape"></div>
-        
+             
         <script>
+        function daydate(){
+        setInterval (function(){
+            var escapedate = document.getElementById('inputdate').value;
+            var escape = new Date(escapedate)
+            escape.setDate(escape.getDate() - 1)
+            escape.setHours(23);
+            escape.setMinutes(59);
+            escape.setSeconds(59);
+            console.log(escape);
 
-        function check(){
-        var escape = document.querySelector("#input_escape").value;
-        var escaperaw = escape.getTime();
-        var nowraw = new Date().getTime();
-        setInterval(function(){
-            var gap = escaperaw - nowraw;
-            var hour = Math.ceil((gap%(1000*60*60*24))/(1000*60*60));
-            var min = Math.ceil((gap%(1000*60*60))/(1000*60));
-            var sec = Math.ceil((gap%(1000*60))/1000);
+            var escaperaw = new Date(escape).getTime()
+            var nowraw = new Date()
+            console.log(nowraw);
+            var between = escaperaw - nowraw;
+            var day = Math.ceil((between/(1000*60*60*24)));    
+            var hour = Math.ceil((between%(1000*60*60*24))/(1000*60*60));
+            var min = Math.ceil((between%(1000*60*60))/(1000*60));
+            var sec = Math.ceil((between%(1000*60))/1000);
+            document.getElementById('datecount').innerHTML = "전역까지 " + day + " 일 "+ hour + " 시간 " + min + " 분 " + sec + " 초 남았습니다.";
+           
+        },1000)
         
-
         }
-        
-
-        
+       
         </script>
         
 
