@@ -98,7 +98,7 @@
         var raw = new Date()
             raw.setDate(raw.getDate() + 1);
             raw.setMinutes(30);
-            raw.setHours(8);
+            raw.setHours(7);
         var end = raw.getTime();
         setInterval(function(){
             var start = new Date().getTime();
@@ -112,7 +112,7 @@
        
         <ul>
         <li id=pgc>
-        <span id="pgb"></div>
+        <div id="pgb"></div>
         </li>
         </ul>
         <div id='datecount'></div>
@@ -125,21 +125,25 @@
         function daydate(){
         setInterval (function(){
             var escapedate = document.getElementById('inputdate').value;
-            var escape = new Date(escapedate)
-            escape.setDate(escape.getDate() - 1)
-            escape.setHours(23);
-            escape.setMinutes(59);
-            escape.setSeconds(59);
-            console.log(escape);
-
+            var escape = new Date(escapedate);
+            escape.setHours(0);
+            escape.setMinutes(0);
+            escape.setSeconds(0);
             var escaperaw = new Date(escape).getTime()
-            var nowraw = new Date()
-            console.log(nowraw);
+            var nowraw = new Date().getTime();
+            var now = new Date(nowraw);
             var between = escaperaw - nowraw;
-            var day = Math.ceil((between/(1000*60*60*24)));    
-            var hour = Math.ceil((between%(1000*60*60*24))/(1000*60*60));
-            var min = Math.ceil((between%(1000*60*60))/(1000*60));
+            var day = Math.ceil((between/(1000*60*60*24))-1);    
+            var hour = Math.ceil((between%(1000*60*60*24))/(1000*60*60)-1);
+            var min = Math.ceil((between%(1000*60*60))/(1000*60)-1);
             var sec = Math.ceil((between%(1000*60))/1000);
+            if(day === 0){
+                    document.getElementById('pgb').style.width ='100%';
+            }else{
+                    var pgbvalue = ((546-day)/546)*100;
+                    document.getElementById('pgb').style.width = pgbvalue + '%';
+            }
+            
             document.getElementById('datecount').innerHTML = "전역까지 " + day + " 일 "+ hour + " 시간 " + min + " 분 " + sec + " 초 남았습니다.";
            
         },1000)
