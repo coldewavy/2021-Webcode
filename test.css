@@ -51,12 +51,8 @@
                 }
 
 
-        .downmenu a:hover{
-                background-color:aqua;
-                
-                color:white;
-
-                
+        .downmenu li:hover{
+                background-color:#bae8c7;
         }
 
         .article{
