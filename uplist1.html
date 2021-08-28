@@ -59,6 +59,80 @@
         </div>
         </ul>
 
+
+        <input type='text' id='input_textchg' />
+        <button onclick='textchg()'>변경</button>
+
+        <div>
+        <pre>
+        title</br>
+        article: 1234567890</br>
+        <span class='textchg_1'> abcdefghi </span> jklmnop 
+        </div>
+        </pre>  
+        <div>
+        title</br>
+        article: 1234567890</br>
+        <span class='textchg_1'> abcdefghi </span> jklmnop 
+        </div>
+        <div>
+        title</br>
+        article: 1234567890</br>
+        <span class='textchg_1'> abcdefghi </span> jklmnop 
+        </div>
+        <div>
+        title</br>
+        article: 1234567890</br>
+        <span class='textchg_1'> abcdefghi </span> jklmnop 
+        </div>
+        <textarea></textarea>
+
+        <div class='workbox'>
+        <div contenteditable="true"> 09:00 ~ 10:00</div>
+        <div contenteditable="true">This is the first line.<br>
+        See, how the text fits here, also if<br>there is a <strong>linebreak</strong> at the end?
+        <br>It works nicely.<br><br><span style="color: lightgreen">Great</span>.
+        </div>
+        </div>
+        <div class='workbox'>
+        <div contenteditable="true"> 09:00 ~ 10:00</div>
+        <div contenteditable="true">This is the first line.<br>
+        See, how the text fits here, also if<br>there is a <strong>linebreak</strong> at the end?
+        <br>It works nicely.<br><br><span style="color: lightgreen">Great</span>.
+        </div>
+        </div>
+        <div class='workbox'>
+        <div contenteditable="true"> 09:00 ~ 10:00</div>
+        <div contenteditable="true">This is the first line.<br>
+        See, how the text fits here, also if<br>there is a <strong>linebreak</strong> at the end?
+        <br>It works nicely.<br><br><span style="color: lightgreen">Great</span>.
+        </div>
+        </div>
+        <div class='workbox'>
+        <div contenteditable="true"> 09:00 ~ 10:00</div>
+        <div contenteditable="true">This is the first line.<br>
+        See, how the text fits here, also if<br>there is a <strong>linebreak</strong> at the end?
+        <br>It works nicely.<br><br><span style="color: lightgreen">Great</span>.
+        </div>
+        </div>
+
+        
+        <script>
+        function textchg(){
+                var text = document.querySelector('#input_textchg').value;
+                var textchg1 = document.getElementsByClassName('textchg_1');
+                var i;
+
+                for(i = 0 ; i<textchg1.length ; i++){
+                textchg1[i].innerHTML = text;
+                }
+                
+        }
+        
+        </script>
+
+
+
         <script>
         var mode = document.querySelector('body').style;
         var title = document.querySelector('#sub-title').style;
@@ -107,19 +181,6 @@
                 }
             
         </script>
-        
-        
-        
-
-
-
-        <img src="title.jpeg" id="img">
-        
-        <p class="article">
-        안녕하세요! 여기는 HTML, CSS, JS 을 통해 만들어진 홈페이지입니다.</br>
-        홈페이지를 만드는 이유는 오랫동안 해보고 싶었던 코딩을 하고 기록하기 위한 홈페이지입니다.</br>
-        여러가지 기능을 배우고 채우고 있습니다!
-        </p>
         
 
 

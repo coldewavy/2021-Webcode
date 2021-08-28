@@ -1,0 +1,20 @@
+<!doctype html> 
+<html lang="ko"> 
+<head> 
+<title>Document</title> 
+</head> 
+<body> <!-- 3. 다른 태그(div)등의 텍스트 복사 --> 
+<button id="btn_div_copy">div 내부 텍스트 복사</button><br>
+<div id="div" style="font-size:40px;"> div 영역입니다. </div> 
+</body> 
+<script> document.getElementById("btn_div_copy").onclick = function()
+{const valOfDIV = document.getElementById("div").innerText; 
+ const textArea = document.createElement('textarea');
+ document.body.appendChild(textArea);
+ textArea.value = valOfDIV;
+ textArea.select();
+ document.execCommand('copy');
+ document.body.removeChild(textArea); 
+ } 
+ </script> 
+ </html>
